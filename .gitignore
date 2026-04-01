@@ -1,0 +1,26 @@
+backend/data/*
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+
+# Env files
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.venv*/
+.pytest_cache/
+
+# OS files
+.DS_Store
+# Excluded from version control
+Talash.pdf
+Talash.txt
+backend/talash.db
