@@ -1,0 +1,67 @@
+talash/
+│
+├── backend/
+│   ├── app/
+│   │   ├── main.py              # FastAPI entry point
+│   │   ├── api/                 # API routes
+│   │   │   ├── routes_upload.py
+│   │   │   ├── routes_candidates.py
+│   │   │   └── routes_analysis.py
+│   │   │
+│   │   ├── core/                # Config & settings
+│   │   │   ├── config.py
+│   │   │   └── prompts.py       # Centralized LLM prompts
+│   │   │
+│   │   ├── services/            # Business logic layer
+│   │   │   ├── parser_service.py
+│   │   │   ├── llm_service.py
+│   │   │   ├── analysis_service.py
+│   │   │   └── email_service.py
+│   │   │
+│   │   ├── models/              # DB models (SQLAlchemy)
+│   │   │   ├── candidate.py
+│   │   │   └── analysis.py
+│   │   │
+│   │   ├── schemas/             # Pydantic schemas
+│   │   │   ├── candidate_schema.py
+│   │   │   └── analysis_schema.py
+│   │   │
+│   │   ├── db/
+│   │   │   ├── session.py
+│   │   │   └── init_db.py
+│   │   │
+│   │   └── utils/
+│   │       ├── pdf_utils.py
+│   │       └── file_utils.py
+│   │
+│   ├── data/
+│   │   ├── raw_cvs/             # uploaded PDFs
+│   │   ├── parsed_json/         # extracted structured CVs
+│   │   └── exports/             # CSV/Excel outputs
+│   │
+│   └── tests/
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Upload.jsx
+│   │   │   ├── CandidateTable.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   └── CandidateDetail.jsx
+│   │   │
+│   │   ├── pages/
+│   │   ├── services/            # API calls
+│   │   └── charts/
+│   │
+│   └── package.json
+│
+├── scripts/
+│   ├── run_pipeline.py          # CLI for milestone demos
+│   └── batch_process.py
+│
+├── docs/
+│   ├── architecture.png
+│   └── prompts.md
+│
+├── requirements.txt
+└── README.md
