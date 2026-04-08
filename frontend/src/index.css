@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --talash-ink: #0f172a;
+  --talash-ocean: #0c4a6e;
+  --talash-teal: #0f766e;
+  --talash-sand: #f5efe4;
+  --talash-rose: #f97316;
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-body: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: radial-gradient(circle at top left, #fdf4ff 0%, #eef2ff 38%, #e0f2fe 70%, #f8fafc 100%);
+  color: var(--talash-ink);
+}
+
+@layer components {
+  .display-font {
+    font-family: var(--font-display);
+  }
+
+  .panel {
+    @apply rounded-2xl border border-slate-200/70 bg-white/85 shadow-[0_20px_40px_rgba(15,23,42,0.08)] backdrop-blur;
+  }
+
+  .panel-muted {
+    @apply rounded-2xl border border-slate-200/60 bg-white/70 shadow-[0_15px_30px_rgba(15,23,42,0.06)] backdrop-blur;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-slate-600;
+  }
+}
+
+@layer utilities {
+  .animate-rise {
+    animation: rise 0.6s ease-out both;
+  }
+
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.app-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(0px);
+  opacity: 0.7;
+}
+
+.orb.orb-a {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle at 30% 30%, rgba(14, 116, 144, 0.35), rgba(14, 116, 144, 0));
+  top: -120px;
+  left: -80px;
+}
+
+.orb.orb-b {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle at 60% 40%, rgba(249, 115, 22, 0.28), rgba(249, 115, 22, 0));
+  bottom: -200px;
+  right: -120px;
+}
+
+.orb.orb-c {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.35), rgba(14, 165, 233, 0));
+  top: 25%;
+  right: 8%;
+}
